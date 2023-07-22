@@ -28,4 +28,29 @@ class Request
     $this->httpMethod = $_SERVER['REQUEST_METHOD'] ?? '';
     $this->uri = $_SERVER['REQUEST_URI'] ?? '';
   }
+  // Retorna o o método Http
+  public function getHttpMethod(): string
+  {
+    return $this->httpMethod;
+  }
+  // Retorna a Uri
+  public function getUri(): string
+  {
+    return $this->uri;
+  }
+  // Retorna os Headers da requisição
+  public function getHeaders(): array
+  {
+    return $this->headers;
+  }
+  // Retorna os QueryParams
+  public function getQueryParams(): array
+  {
+    return $this->queryParams;
+  }
+  // Retorna as variáveis Post
+  public function getPostVars(): array
+  {
+    return $this->postVars;
+  }
 }
