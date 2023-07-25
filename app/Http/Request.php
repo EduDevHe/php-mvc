@@ -11,13 +11,11 @@ class Request
   private string $uri;
 
   // Parâmetros da URL ($_GET)
-  private array $queryParams = [];
 
   // Variáveis recebidas pelo metodo POST ($_POST)
-  private array $postVars = [];
 
   // Cabeçalho da requisição
-  private array $headers = [];
+  private array $headers, $postVars, $queryParams;
 
 
   public function __construct()
