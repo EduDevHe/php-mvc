@@ -4,6 +4,11 @@ namespace App\Utils;
 
 class View
 {
+  private array $vars;
+  public static function inti($vars = [])
+  {
+    self::$vars = $vars;
+  }
 
   /**
    * Método responspável por retornar o conteúdo de uma view
@@ -26,6 +31,8 @@ class View
    **/
   public static function render(string $view, array $vars = []): string
   {
+
+    $vars = array_merge(self::$vars, $vars);
     // Obtem as chaves do array de variaveis
     $keys = array_keys($vars);
 
